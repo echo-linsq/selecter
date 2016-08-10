@@ -1,0 +1,127 @@
+$height:36px;
+$width: 190px;
+$lineHeight:$height;
+$iconcolor:#6a6a6a;
+$bgColor:#ffffff;
+$borderColor:#e0e0e0;
+$borderRadius:5px;
+$fontPaddingLeft:10px;
+$fontSize:14px;
+$fontColor:#444444;
+$listMaxHeight:200px;
+$SelectStyleType: defaultstyle;//可选值为：defaultstyle\nike\pointed
+$listSelectedBgColor:#e4e4e4;
+$listSelectedFontColor:#444444;
+$listSelectedIconColor:#00c16c;//当SelectStyleType为nike\pointed时，可定义图标颜色
+$disabledBgColor:#eeeeee;
+$disabledFontColor:#444444;
+$listHoverBgColor:$listSelectedBgColor;
+.m-select-unit {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: $height;
+    width: $width;
+    line-height: $lineHeight;
+    .u-selecticon {
+        width: 6px;
+        height: 6px;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: rotate(45deg);
+        cursor:pointer;
+    }
+    .z-iconup {
+        border-top: 1px solid $iconcolor;
+        border-left: 1px solid $iconcolor;
+    }
+    .z-icondown {
+        margin-top: -3px;
+        border: none;
+        border-bottom: 1px solid $iconcolor;
+        border-right: 1px solid $iconcolor;
+    }
+    .u-selected {
+        height: $height;
+        margin: 0;
+        background-color: $bgColor;
+        box-sizing: border-box;
+        border: 1px solid $borderColor;
+        border-radius: $borderRadius;
+        padding-left: $fontPaddingLeft;
+        font-size: $fontSize;
+        color: $fontColor;
+        cursor: pointer;
+    }
+    .z-selected-showlist {
+        border-radius: $borderRadius $borderRadius 0 0;
+    }
+    .z-selected-disable {
+        background-color: $disabledBgColor;
+        color:$disabledFontColor;
+    }
+    .u-dropdown-list {
+        z-index: 999;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        overflow: auto;
+        max-height: $listMaxHeight;
+        display: none;
+        box-sizing: border-box;
+        width: 100%;
+        background-color: $bgColor;
+        border: 1px solid $borderColor;
+        border-radius: 0 0 $borderRadius $borderRadius;
+        border-top: none;
+        list-style: none;
+        color: $fontColor;
+        li {
+            padding-left: $fontPaddingLeft;
+            cursor: pointer;
+            border-bottom: 1px solid $borderColor;
+            &:hover {
+                background: $listHoverBgColor;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+            &:last-child:hover {
+                background: $listHoverBgColor;
+                border-radius: 0 0 $borderRadius $borderRadius;
+            }
+        }
+    }
+    .z-select-listitem {
+        position: relative;
+        color: $listSelectedFontColor;
+        background-color: $listSelectedBgColor;
+        @if $SelectStyleType==defaultstyle {
+            background-color: $listSelectedBgColor;
+        }
+        @else {
+            &:before {
+                content: "";
+                position: absolute;
+                right: 10px;
+                top: 45%;
+                display: inline-block;
+                @if $SelectStyleType==nike {
+                    height: 9px;
+                    width: 6px;
+                    border-right: solid 2px $listSelectedIconColor;
+                    border-bottom: solid 2px $listSelectedIconColor;
+                    transform: rotate(45deg);
+                    transform-origin: 100% 0%;
+                }
+                @else if $SelectStyleType==pointed {
+                    height: 5px;
+                    width: 5px;
+                    border-radius: 5px;
+                    background-color: $listSelectedIconColor;
+                }
+            }
+        }
+    }
+}
