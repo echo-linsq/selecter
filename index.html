@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>下拉菜单组件</title>
     <meta charset="UTF-8">
@@ -30,40 +29,39 @@
         <div class="m-selecter"></div>
     </div>
     <script>
-    var items = [{
-        value: 'value1',
-        text: 'text1'
-    }, {
-        value: 'value2',
-        text: 'text2'
-    }, {
-        value: 'value3',
-        text: 'text3'
-    }, {
-        value: 'value4',
-        text: 'text4'
-    }, {
-        value: 'value5',
-        text: 'text5'
-    }, {
-        value: 'value6',
-        text: 'text6'
-    }, {
-        value: 'value7',
-        text: 'text7'
-    }, {
-        value: 'value8',
-        text: 'text8'
-    }];
-    $('.m-selecter').initSelect({
-        name: 'select',
-        items: items,
-        selectvalue: items[0],
-        callback: function(res) {
-            console.log(res)
-        }
-    });
+        var items = [{
+            value: 'value1',
+            text: 'text1'
+        }, {
+            value: 'value2',
+            text: 'text2'
+        }, {
+            value: 'value3',
+            text: 'text3'
+        }, {
+            value: 'value4',
+            text: 'text4'
+        }, {
+            value: 'value5',
+            text: 'text5'
+        }, {
+            value: 'value6',
+            text: 'text6'
+        }, {
+            value: 'value7',
+            text: 'text7'
+        }, {
+            value: 'value8',
+            text: 'text8'
+        }];
+        $('.m-selecter').initSelect({
+            name: 'select',
+            items: items,
+            selectvalue: items[0],
+            callback: function(res) {
+                console.log(res)
+            }
+        });
     </script>
 </body>
-
 </html>
