@@ -1,0 +1,16 @@
+{
+    "comment": "下拉框组件",
+    "version": "1.0.0",
+    "product": "shark-selecter",
+    "contextPath": "",
+    "port": 8888,
+    "hostname": "localhost",
+    "openurl": "http://localhost:8888/index.html",
+    "webapp": "/",
+    "cssPath": "styles/css",
+    "scssPath": "styles/scss",
+    "jsPath": "scripts",
+    "htmlPath": "",
+    "build": "build",
+    "buildDist": "dist"
+}
